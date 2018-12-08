@@ -1,0 +1,27 @@
+{
+  "name": "ip-project-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TarcisoLoiola/ip-project-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TarcisoLoiola/ip-project-backend/issues"
+  },
+  "homepage": "https://github.com/TarcisoLoiola/ip-project-backend#readme"
+}
