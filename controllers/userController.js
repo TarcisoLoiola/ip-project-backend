@@ -1,44 +1,37 @@
-const db = require("../models")
+const db = require('../models')
+const data = require('../users')
 
 // Defining methods for the userController
 module.exports = {
-  findOne: function(req, res) {
-    console.log("Users Controller FindOne")
-    db.users
-      .find(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err))
+  findAll: function(req, res) {
+    console.log('Users Controller FindAll')
+    data.find({
+      where: {
+        id: '5c0fed9d25eaeacb1fd5da8c'
+      }
+    })
+    .then(data => res.json(data))
+    .catch(err => res.json('Error 404'))
   },
 
   findById: function(req, res) {
-    db.users
-      .findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err))
+    console.log('Users Controller FindById')
+    return res.json('Users Controller FindById')
   },
+
   create: function(req, res) {
-    console.log("Users Controller Create")
-    console.log(req.body)
-    db.users
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err))
+    console.log('Users Controller Create')
+    data.push(req.body)
+    return res.json(data)
   },
 
   update: function(req, res) {
-    console.log("Users Controller Update")
-    db.users
-      .findOneAndUpdate({ _id: req.params._id }, req.body )
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err))
+    console.log('Users Controller Update')
+    return res.json('Users Controller Update')
   },
 
   remove: function(req, res) {
-    console.log("Users Controller Remove")
-    db.users
-      .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err))
+    console.log('Users Controller Remove')
+    return res.json('Users Controller Remove')
   }
 }
